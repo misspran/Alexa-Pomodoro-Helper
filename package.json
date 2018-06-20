@@ -1,0 +1,15 @@
+{
+  "name": "testalexa",
+  "version": "1.0.0",
+  "description": "testing out development for Alexa",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Vi Tran",
+  "license": "ISC",
+  "dependencies": {
+    "ask-sdk": "^2.0.6",
+    "ask-sdk-dynamodb-persistence-adapter": "^2.0.6"
+  }
+}
