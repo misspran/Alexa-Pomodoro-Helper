@@ -1,13 +1,16 @@
 'use strict'
 
 const Alexa = require('alexa-sdk')
+const app = new alexa.app('pomodoroclock')
+let POMODORO_TIME = 25;
+let BREAK_TIME = 5;
 
 
 const PomodoroTimerHandler = {
 	canHandle(handlerInput){
 		const request =  handlerInput.requestEvelope.request;
 		return request.type === 'LaunchRequest' || request.type === 'IntentRequest'
-		 && request.intent.name === 'PomodoroTimer'
+		 && request.intent.name === 'PomodoroClock'
 
 	},
 	handle (handlerInput){
