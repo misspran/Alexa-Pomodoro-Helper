@@ -1,0 +1,50 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "pomodoro clock",
+            "intents": [
+                {
+                    "name": "AMAZON.FallbackIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "setPomodoroTimer",
+                    "slots": [
+                        {
+                            "name": "timeAmt",
+                            "type": "AMAZON.DURATION"
+                        },
+                        {
+                            "name": "timeBreak",
+                            "type": "AMAZON.DURATION"
+                        }
+                    ],
+                    "samples": [
+                        "Start Pomodoro Clock",
+                        "Begin Pomodoro Clock",
+                        "Set Pomodoro Clock",
+                        "Activate Pomodoro Clock for {timeAmt} minutes and {timeBreak} minutes break",
+                        "Start Pomodoro Clock for {timeAmt} minutes sessions with {timeBreak} minutes break",
+                        "Begin Pomodoro Clock for {timeAmt} minutes and {timeBreak} minutes break",
+                        "Set Pomodoro Clock for {timeAmt} minutes and {timeBreak} minutes break",
+                        "Start Pomodoro Clock for {timeAmt} minutes sessions",
+                        "Begin Pomodoro Clock for {timeAmt} minutes sessions"
+                    ]
+                }
+            ],
+            "types": []
+        }
+    }
+}
