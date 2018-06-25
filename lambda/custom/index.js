@@ -1,20 +1,31 @@
 'use strict'
 
 const Alexa = require('alexa-sdk')
-const app = new alexa.app('pomodoroclock')
-let POMODORO_TIME = 25;
-let BREAK_TIME = 5;
+//const app = new alexa.app('pomodoroclock')
 
 
-const PomodoroTimerHandler = {
+
+const PomodoroClockHandler = {
 	canHandle(handlerInput){
 		const request =  handlerInput.requestEvelope.request;
 		return request.type === 'LaunchRequest' || request.type === 'IntentRequest'
-		 && request.intent.name === 'PomodoroClock'
+		 && request.intent.name === 'setPomodoroTimer'
 
 	},
 	handle (handlerInput){
+	const request = handlerInput.requestEnvelope.request;
+    const responseBuilder = handlerInput.responseBuilder;
+    let time = 25;
+    let break = 5;
+    let now = new Date()
+    now = Date().getTime()
 
+    if(request.intent.slots.timeAmt.value){
+    	time = request.intent.slots.timeAmt.value;
+    }
+
+	const speechOutput = `Your pomodoro clock is set for, ${} minutes and a ${} minutes break. `;
+	return responseBuilder.speak(speechOutput).reprompt(speechOutput).getResponse();
 
 	}
 
@@ -65,7 +76,7 @@ const skillBuilder = Alexa.SkillBuilders.custom();
 
 exports.handler = 	skillBuilder
 	.addRequestHandlers(
-	PomodoroTimerHandler
+	PomodoroClockHandler
 	HelpHandler,
 	ExitHandler,
 	FallbackHandler,
