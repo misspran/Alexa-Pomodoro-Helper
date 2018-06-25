@@ -1,7 +1,9 @@
 'use strict'
 
 const Alexa = require('alexa-sdk')
-//const app = new alexa.app('pomodoroclock')
+//Alexa Skills not possible to do timers/alerts yet? Have to look into notifications via AVS
+
+//https://github.com/alexa/alexa-skills-kit-sdk-for-nodejs/issues/300
 
 
 
