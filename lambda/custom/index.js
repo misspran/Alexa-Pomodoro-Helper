@@ -25,8 +25,11 @@ const PomodoroClockHandler = {
     if(request.intent.slots.timeAmt.value){
     	time = request.intent.slots.timeAmt.value;
     }
+    if(request.intent.slots.timeBreak.value){
+    	break = request.intent.slots.timeBreak.value
+    }
 
-	const speechOutput = `Your pomodoro clock is set for, ${} minutes and a ${} minutes break. `;
+	const speechOutput = `Your pomodoro clock is set for, ${time} minutes and a ${break} minutes break.`;
 	return responseBuilder.speak(speechOutput).reprompt(speechOutput).getResponse();
 
 	}
@@ -76,7 +79,7 @@ const ErrorHandler = {
 
 const skillBuilder = Alexa.SkillBuilders.custom();
 
-exports.handler = 	skillBuilder
+exports.handler = skillBuilder
 	.addRequestHandlers(
 	PomodoroClockHandler
 	HelpHandler,
